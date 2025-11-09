@@ -17,14 +17,14 @@
 <body class="bg-[#131313] flex flex-col items-center font-pixel">
     <header>
         <div class="w-screen h-16 lg:h-24 bg-black flex items-center justify-between px-4 lg:px-8">
-            <img src="img/icon.png" class="w-8 lg:w-12">
+            <img id="icon" src="img/icon.png" class="w-8 lg:w-12">
             <img src="img/menu.png" class="w-8 lg:hidden">
             <div class="hidden lg:flex items-center justify-around w-2/4">
-                <h1 class="text-title2 text-4xl cursor-pointer hover:scale-105">HOME</h1>
-                <h1 class="text-title2 text-4xl cursor-pointer hover:scale-105">SAVELIST</h1>
-                <h1 class="text-title2 text-4xl cursor-pointer hover:scale-105">ABOUT</h1>
+                <h1 id="home" class="text-title2 text-4xl cursor-pointer hover:scale-105">HOME</h1>
+                <h1 id="savelist" class="text-title2 text-4xl cursor-pointer hover:scale-105">SAVELIST</h1>
+                <h1 id="about" class="text-title2 text-4xl cursor-pointer hover:scale-105">ABOUT</h1>
             </div>
-            <img src="img/search.png" class="hidden lg:block w-8 cursor-pointer">
+            <img id="search" src="img/search.png" class="hidden lg:block w-8 cursor-pointer">
         </div>
     </header>
     <section class="w-screen flex flex-col items-center">
@@ -176,6 +176,6 @@
         <br><div class="w-11/12 border-b border-title3"></div>
         <p class="text-white font-sans text-sm m-3">PixelQuest – Video Game Catalog © 2025 YouCode</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="search.js"></script>
 </body>
 </html>

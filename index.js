@@ -6,6 +6,9 @@ document.getElementById("search").onclick = function () {
 document.getElementById("savelist").onclick = function () {
     window.location.href = "save.html";
 }
+document.getElementById("explore").onclick = function () {
+    window.location.href = "explore.html";
+}
 
 cards.forEach(card => {
     card.addEventListener("click", () => {

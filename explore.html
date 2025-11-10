@@ -17,10 +17,10 @@
 <body class="bg-[#131313] flex flex-col items-center font-pixel">
     <header>
         <div class="w-screen h-16 lg:h-24 bg-black flex items-center justify-between px-4 lg:px-8">
-            <img src="img/icon.png" class="w-8 lg:w-12 cursor-pointer">
+            <img id="homeicon" src="img/icon.png" class="w-8 lg:w-12 cursor-pointer">
             <img src="img/menu.png" class="w-8 lg:hidden">
             <div class="hidden lg:flex items-center justify-around w-2/4">
-                <h1 id="home" class="text-title1 text-5xl cursor-pointer">HOME</h1>
+                <h1 id="home" class="text-title2 text-4xl cursor-pointer hover:scale-105">HOME</h1>
                 <h1 id="savelist" class="text-title2 text-4xl cursor-pointer hover:scale-105">SAVELIST</h1>
                 <h1 id="about" class="text-title2 text-4xl cursor-pointer hover:scale-105">ABOUT</h1>
             </div>
@@ -28,13 +28,16 @@
         </div>
     </header>
     <section class="w-screen flex flex-col items-center">
-        <img src="img/cover.webp" class="h-40 md:h-60 lg:h-96 w-screen">
-        <div class="px-3 md:px-10 mt-6 flex flex-col gap-2 w-screen lg:px-16 lg:mt-12">
-            <h1 class="text-title1 font-bold text-lg md:text-2xl lg:text-4xl">Discover Your Next Favorite Game</h1>
-            <h2 class="text-title2 ms-1 md:text-xl lg:text-2xl">Explore thousands of video games from every genre and platform</h2>
-            <p class="text-title3 ms-1 md:text-xl lg:text-2xl">Stay up-to-date with the latest releases, top-rated games, and hidden gems. Find your next adventure today!</p>
-            <button id="explore" class="border border-dashed border-title2 w-36 h-8 md:w-40 md:h-10 lg:w-44 lg:h-12 text-sm lg:text-lg font-bold text-title2 text-stroke cursor-pointer hover:bg-title2 hover:opacity-40">Explore Games</button>
-            <h1 class="text-title1 font-bold text-lg md:text-2xl lg:text-4xl">Popular Games</h1>
+        <div class="px-3 md:px-10 mt-6 flex flex-col items-center gap-2 w-screen lg:px-16 lg:mt-12">
+            <div class="w-1/1 flex items-center justify-between">
+                <h1 class="text-title1 font-bold text-lg md:text-2xl lg:text-4xl">Explore All Games</h1>
+            </div>
+            <div class="w-1/1 flex items-center justify-between">
+                <h2 class="text-title2 ms-1 md:text-xl lg:text-2xl">Find any game by name and explore detailed information instantly</h2>
+            </div>
+            <div class="w-1/1 m-6 flex items-center justify-between">
+                <img class="w-4 md:w-8 cursor-pointer" src="img/filter.png">
+            </div>
             <div id="list" class="md:flex flex-wrap justify-around gap-5">
                 <div class="mb-5 md:mb-10 border border-title2 md:w-[45%] lg:w-[32%] cursor-pointer hover:scale-105 cards">
                     <img src="img/fifa.jpeg">
@@ -168,6 +171,6 @@
         <br><div class="w-11/12 border-b border-title3"></div>
         <p class="text-white font-sans text-sm m-3">PixelQuest – Video Game Catalog © 2025 YouCode</p>
     </footer>
-    <script src="index.js"></script>
+    <script src="explore.js"></script>
 </body>
 </html>

@@ -3,6 +3,9 @@ let cards = document.querySelectorAll(".cards");
 document.getElementById("search").onclick = function () {
     window.location.href = "search.html";
 }
+document.getElementById("savelist").onclick = function () {
+    window.location.href = "save.html";
+}
 
 cards.forEach(card => {
     card.addEventListener("click", () => {

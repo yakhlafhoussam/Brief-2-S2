@@ -4,3 +4,6 @@ document.getElementById("search").onclick = function () {
 document.getElementById("home").onclick = function () {
     window.location.href = "index.html";
 }
+document.getElementById("homeicon").onclick = function () {
+    window.location.href = "index.html";
+}

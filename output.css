@@ -1001,10 +1001,6 @@ video {
     width: 13rem;
   }
 
-  .lg\:w-72 {
-    width: 18rem;
-  }
-
   .lg\:w-8 {
     width: 2rem;
   }
@@ -1015,14 +1011,6 @@ video {
 
   .lg\:w-\[32\%\] {
     width: 32%;
-  }
-
-  .lg\:w-9 {
-    width: 2.25rem;
-  }
-
-  .lg\:w-96 {
-    width: 24rem;
   }
 
   .lg\:w-auto {

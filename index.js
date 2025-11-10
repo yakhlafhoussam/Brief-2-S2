@@ -1,3 +1,11 @@
+let cards = document.querySelectorAll(".cards");
+
 document.getElementById("search").onclick = function () {
     window.location.href = "search.html";
 }
+
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        window.location.href = "detail.html";
+    });
+});

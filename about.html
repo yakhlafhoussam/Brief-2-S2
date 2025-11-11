@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>PixelQuest</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="https://use.typekit.net/dba3zkv.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-pixel: "pixelify-sans";
+      }
+    </style>
+</head>
+<body class="bg-black font-pixel">
+    <main class="bg-[url('img/back.png')] bg-cover lg:bg-auto flex flex-col items-center">
+        <header>
+        <div class="w-screen h-16 lg:h-24 bg-black flex items-center justify-between px-4 lg:px-8">
+            <img id="homeicon" src="img/icon.png" class="w-8 lg:w-12 cursor-pointer">
+            <img src="img/menu.png" class="w-8 lg:hidden">
+            <div class="hidden lg:flex items-center justify-around w-2/4">
+                <h1 id="home" class="text-title2 text-4xl cursor-pointer hover:scale-105">HOME</h1>
+                <h1 id="savelist" class="text-title2 text-4xl cursor-pointer hover:scale-105">SAVELIST</h1>
+                <h1 id="about" class="text-title1 text-5xl cursor-pointer">ABOUT</h1>
+            </div>
+            <img id="search" src="img/search.png" class="hidden lg:block w-8 cursor-pointer hover:scale-105">
+        </div>
+    </header>
+    <section class="w-screen flex flex-col items-center">
+        <div class="px-3 md:px-10 mt-6 flex flex-col items-center gap-2 w-screen lg:px-16 lg:mt-12">
+            <div class="w-1/1 flex items-center justify-center">
+                <h1 class="text-title1 font-bold text-lg md:text-2xl lg:text-4xl">About US</h1>
+            </div>
+            <div class="w-1/1 flex items-center justify-center">
+                <h2 class="text-title2 ms-1 md:text-xl lg:text-2xl">Discover. Explore. Play</h2>
+            </div>
+            <div class="w-1/1 flex items-center justify-center">
+                <p class="text-center lg:w-3/4 text-title3 md:text-xl lg:text-2xl">PixelQuest is a website that lets players explore, search, and save their favorite video games  It connects to a powerful API to bring the latest titles, ratings, and details from across platforms</p>
+            </div>
+            <div class="w-1/1 mt-6 flex items-center justify-center">
+                <h2 class="text-title2 ms-1 md:text-xl lg:text-2xl">Our Mission</h2>
+            </div>
+            <div class="w-1/1 flex items-center justify-center">
+                <p class="text-center lg:w-3/4 text-title3 md:text-xl lg:text-2xl">We aim to make discovering games simple and fun  Whether you’re a casual player or a hardcore gamer PixelQuest helps you find your next adventure</p>
+            </div>
+            <div class="w-1/1 mt-6 flex items-center justify-center">
+                <h2 class="text-title2 ms-1 md:text-xl lg:text-2xl">What do we offer?</h2>
+            </div>
+            <div class="w-11/12 flex flex-col md:flex-row md:flex-wrap md:gap-2 items-center">
+                <div class="w-11/12 md:w-[49%] px-4 py-14 md:py-32 lg:py-48 bg-[url('img/cover1.png')] bg-cover bg-center lg:bg-auto mb-5 md:mb-10 border border-dashed border-title2">
+                    <p class="text-center text-title3 md:text-xl lg:text-2xl">Explore Games</p>
+                    <p class="text-title4 md:text-xl lg:text-2xl text-center">Browse the most popular and trending titles</p>
+                </div>
+                <div class="w-11/12 md:w-[49%] px-4 py-14 md:py-32 lg:py-48 bg-[url('img/cover2.png')] bg-cover bg-center lg:bg-auto mb-5 md:mb-10 border border-dashed border-title2">
+                    <p class="text-center text-title3 md:text-xl lg:text-2xl">Game Details</p>
+                    <p class="text-title4 md:text-xl lg:text-2xl text-center">View ratings, genres, platforms, and screenshots</p>
+                </div>
+                <div class="w-11/12 md:w-[49%] px-4 py-14 md:py-32 lg:py-48 bg-[url('img/cover3.png')] bg-cover bg-center lg:bg-auto mb-5 md:mb-10 border border-dashed border-title2">
+                    <p class="text-center text-title3 md:text-xl lg:text-2xl">Manage Favorites</p>
+                    <p class="text-title4 md:text-xl lg:text-2xl text-center">Save your favorite games with localStorage</p>
+                </div>
+                <div class="w-11/12 md:w-[49%] px-4 py-14 md:py-32 lg:py-48 bg-[url('img/cover4.png')] bg-cover bg-center lg:bg-auto mb-5 md:mb-10 border border-dashed border-title2">
+                    <p class="text-center text-title3 md:text-xl lg:text-2xl">Instant Search</p>
+                    <p class="text-title4 md:text-xl lg:text-2xl text-center">Find games quickly without reloading the page</p>
+                </div>
+            </div>
+            <div class="w-1/1 mt-6 flex items-center justify-center">
+                <h2 class="text-title2 ms-1 md:text-xl lg:text-2xl">Technologies used</h2>
+            </div>
+            <div class="w-screen flex items-center justify-around">
+                <div class="w-28 h-28 md:w-52 lg:w-96 lg:h-96 md:h-52 bg-[url('img/html.png')] bg-cover bg-center lg:bg-auto mb-5 md:mb-10 border border-dashed border-title2 flex items-center justify-center">
+                    <p class="text-center text-title3 md:text-xl lg:text-2xl">HTML</p>
+                </div>
+                <div class="w-28 h-28 md:w-52 lg:w-96 lg:h-96 md:h-52 bg-[url('img/tailwind.png')] bg-cover bg-center lg:bg-auto mb-5 md:mb-10 border border-dashed border-title2 flex items-center justify-center">
+                    <p class="text-center text-title3 md:text-xl lg:text-2xl">Tailwind</p>
+                </div>
+                <div class="w-28 h-28 md:w-52 lg:w-96 lg:h-96 md:h-52 bg-[url('img/java-script.png')] bg-cover bg-center lg:bg-auto mb-5 md:mb-10 border border-dashed border-title2 flex items-center justify-center">
+                    <p class="text-center text-title3 md:text-xl lg:text-2xl">JavaScript</p>
+                </div>
+            </div>
+            <div class="w-1/1 mt-6 flex items-center justify-center">
+                <h2 class="text-title2 ms-1 md:text-xl lg:text-2xl">Team</h2>
+            </div>
+            <div class="w-11/12 flex flex-col items-center justify-center">
+                <div class="w-1/1 flex justify-around">
+                    <div class="w-40 md:w-48 lg:w-60 flex justify-start">
+                        <p class=" text-title3 md:text-xl lg:text-2xl">Idea:</p>
+                    </div>
+                    <div class="w-40 md:w-48 lg:w-60 flex justify-start">
+                        <p class="text-title4 md:text-xl lg:text-2xl">Saad Haimeur</p>
+                    </div>
+                </div>
+                <div class="w-1/1 flex justify-around">
+                    <div class="w-40 md:w-48 lg:w-60 flex justify-start">
+                        <p class=" text-title3 md:text-xl lg:text-2xl">API creator:</p>
+                    </div>
+                    <div class="w-40 md:w-48 lg:w-60 flex justify-start">
+                        <p class="text-title4 md:text-xl lg:text-2xl">Badr Eddine Slaoui</p>
+                    </div>
+                </div>
+                <div class="w-1/1 flex justify-around">
+                    <div class="w-40 md:w-48 lg:w-60 flex justify-start">
+                        <p class=" text-title3 md:text-xl lg:text-2xl">Design and Develop:</p>
+                    </div>
+                    <div class="w-40 md:w-48 lg:w-60 flex justify-start">
+                        <p class="text-title4 md:text-xl lg:text-2xl">Houssam YAKHLAF</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    </main>
+    <footer class="w-screen bg-black flex flex-col justify-center items-center">
+        <div class="w-screen">
+            <img src="img/icon2.png" class="w-40 p-6 md:w-64 lg:w-80 lg:p-8">
+        </div>
+        <div class="w-screen flex flex-col lg:flex-row items-center">
+            <div class="w-3/5 flex flex-col justify-center text-center border-b border-solid border-title3 lg:border-none mt-2 pb-4 lg:w-1/3">
+                <h1 class="text-title2 font-bold lg:text-3xl">Produits</h1>
+                <p class="text-white text-sm lg:text-2xl">PixelQuest – PASS</p>
+                <p class="text-white text-sm lg:text-2xl">Gift Cards</p>
+                <p class="text-white text-sm lg:text-2xl">Winter pack</p>
+                <p class="text-white text-sm lg:text-2xl">Badges</p>
+            </div>
+            <div class="w-3/5 flex flex-col justify-center text-center border-b border-solid border-title3 lg:border-none mt-2 pb-4 lg:w-1/3">
+                <h1 class="text-title2 font-bold lg:text-3xl">Company</h1>
+                <p class="text-white text-sm lg:text-2xl">About us</p>
+                <p class="text-white text-sm lg:text-2xl">Contact</p>
+                <p class="text-white text-sm lg:text-2xl">News</p>
+                <p class="text-white text-sm lg:text-2xl">Contact</p>
+            </div>
+            <div class="w-3/5 flex flex-col justify-center text-center border-b border-solid border-title3 lg:border-none mt-2 pb-4 lg:w-1/3">
+                <h1 class="text-title2 font-bold lg:text-3xl">Social</h1>
+                <p class="text-white text-sm lg:text-2xl">Twitter</p>
+                <p class="text-white text-sm lg:text-2xl">LinkedIn</p>
+                <p class="text-white text-sm lg:text-2xl">Facebook</p>
+                <p class="text-white text-sm lg:text-2xl">GitHub</p>
+            </div>
+        </div>
+        <div class="flex justify-center border border-dashed border-title2 mt-4">
+            <div class="flex items-center mx-5">
+                <img class="w-4 lg:w-8 m-2 lg:m-4" src="img/in.png">
+                <img class="w-4 lg:w-8 m-2 lg:m-4" src="img/facebook.png">
+                <img class="w-4 lg:w-8 m-2 lg:m-4" src="img/github.png">
+                <img class="w-4 lg:w-8 m-2 lg:m-4" src="img/instagram.png">
+                <img class="w-4 lg:w-8 m-2 lg:m-4" src="img/x.png">
+            </div>
+        </div>
+        <br><div class="w-11/12 border-b border-title3"></div>
+        <p class="text-white font-sans text-sm m-3">PixelQuest – Video Game Catalog © 2025 YouCode</p>
+    </footer>
+    <script src="about.js"></script>
+</body>
+</html>

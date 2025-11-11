@@ -16,15 +16,23 @@
 </head>
 <body class="bg-[#131313] flex flex-col items-center font-pixel">
     <header>
-        <div class="w-screen h-16 lg:h-24 bg-black flex items-center justify-between px-4 lg:px-8">
+        <div>
+            <div class="w-screen h-16 lg:h-24 bg-black flex items-center justify-between px-4 lg:px-8">
             <img id="homeicon" src="img/icon.png" class="w-8 lg:w-12 cursor-pointer">
-            <img src="img/menu.png" class="w-8 lg:hidden">
+            <img id="menu" src="img/menu.png" class="w-8 lg:hidden">
             <div class="hidden lg:flex items-center justify-around w-2/4">
                 <h1 id="home" class="text-title2 text-4xl cursor-pointer hover:scale-105">HOME</h1>
                 <h1 id="savelist" class="text-title2 text-4xl cursor-pointer hover:scale-105">SAVELIST</h1>
                 <h1 id="about" class="text-title2 text-4xl cursor-pointer hover:scale-105">ABOUT</h1>
             </div>
             <img id="search" src="img/search.png" class="hidden lg:block w-8 cursor-pointer">
+        </div>
+        <div id="bigmenu" class="hidden bg-black w-screen h-0 flex-col justify-center items-center border-t border-dashed border-title2 lg:hidden">
+                    <h1 id="minihome" class="text-title2 cursor-pointer">HOME</h1>
+                    <h1 id="minisavelist" class="text-title2 cursor-pointer hover:scale-105">SAVELIST</h1>
+                    <h1 id="miniabout" class="text-title2 cursor-pointer hover:scale-105">ABOUT</h1>
+                    <h1 id="minisearch" class="text-title1 cursor-pointer hover:scale-105">SEARCH</h1>
+            </div>
         </div>
     </header>
     <section class="w-screen flex flex-col items-center">
@@ -176,6 +184,7 @@
         <br><div class="w-11/12 border-b border-title3"></div>
         <p class="text-white font-sans text-sm m-3">PixelQuest – Video Game Catalog © 2025 YouCode</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="search.js"></script>
 </body>
 </html>

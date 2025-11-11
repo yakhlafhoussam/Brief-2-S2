@@ -11,6 +11,9 @@ document.getElementById("homeicon").onclick = function () {
 document.getElementById("savelist").onclick = function () {
     window.location.href = "save.html";
 }
+document.getElementById("about").onclick = function () {
+    window.location.href = "about.html";
+}
 
 
 document.getElementById("miniabout").onclick = function () {

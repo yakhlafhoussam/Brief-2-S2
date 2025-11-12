@@ -1151,8 +1151,8 @@ video {
     width: 32%;
   }
 
-  .lg\:w-auto {
-    width: auto;
+  .lg\:w-\[900px\] {
+    width: 900px;
   }
 
   .lg\:flex-row {

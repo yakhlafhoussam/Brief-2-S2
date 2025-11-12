@@ -1,18 +1,50 @@
-let cards = document.querySelectorAll(".cards");
+let cards = [];
 let playmenu = false;
 let url = `https://debuggers-games-api.duckdns.org/api/games`;
 let datas;
 let page = 1;
 let gamelist = document.querySelector("#list");
+let chose;
+let loves = JSON.parse(window.localStorage.getItem("savelist")) || [];
+let idsearch = 0;
+let find = false;
+
+function turnon() {
+    cards.forEach(card => {
+        card.addEventListener("click", (events) => {
+            chose = events.target.id;
+            window.localStorage.setItem("chose", JSON.stringify(chose));
+            window.location.href = "detail.html";
+        });
+    });
+    document.querySelectorAll(".save").forEach(saveone => {
+        saveone.addEventListener("click", (event) => {
+            idsearch = event.target.id;
+            for (let check = 0; check < loves.length; check++) {
+                if (loves[check] == idsearch) {
+                    loves.splice(check, 1)
+                    find = true;
+                }
+            }
+            if (find == true) {
+                saveone.setAttribute("src", "img/heart.png");
+                window.localStorage.setItem("savelist", JSON.stringify(loves));
+                find = false;
+            } else {
+                loves.push(idsearch);
+                window.localStorage.setItem("savelist", JSON.stringify(loves));
+                saveone.setAttribute("src", "img/fillheart.png");
+            }
+        });
+    });
+}
 
 function displaydata() {
-    console.log(datas.results[0].genres.length);
-    
     for (let i = 0; i < 20; i++) {
         if (datas.results[i].rating >= 4) {
             gamelist.insertAdjacentHTML("beforeend", `
-                <div class="mb-5 md:mb-10 border border-title2 md:w-[45%] md:h-full lg:w-[32%] cursor-pointer hover:scale-105 cards">
-                    <img class="w-[100%] h-[226px] lg:h-[227px] md:h-[181px]" src="${datas.results[i].background_image}">
+                <div class="mb-5 md:mb-10 border border-title2 md:w-[45%] md:h-full lg:w-[32%] cursor-pointer hover:opacity-75 lg:hover:scale-105 lg:hover:opacity-100 cards">
+                    <img id="#${datas.results[i].id}" class="w-[100%] h-[226px] lg:h-[227px] md:h-[181px] showinfo" src="${datas.results[i].background_image}">
                     <div id="plat" class="m-3 flex">
                         
                     </div>
@@ -31,7 +63,7 @@ function displaydata() {
                                 </div>
                             <p class="text-title4">${datas.results[i].rating}</p>
                         </div>
-                        <img class="w-5 h-5 mr-3 cursor-pointer hover:scale-105" src="img/heart.png">
+                        <img id="${datas.results[i].id}" class="w-5 h-5 mr-3 cursor-pointer hover:scale-105 save" src="img/heart.png">
                     </div>
                 </div>
             `);
@@ -90,8 +122,15 @@ function displaydata() {
                 }
             }
             document.querySelector("#plat").removeAttribute("id");
+            for (let check = 0; check < loves.length; check++) {
+                if (loves[check] == datas.results[i].id) {
+                    document.getElementById(`${datas.results[i].id}`).setAttribute("src", "img/fillheart.png");
+                }
+            }
         }
     }
+    cards = document.querySelectorAll(".showinfo");
+    turnon();
 }
 
 async function getdata() {
@@ -147,11 +186,4 @@ document.getElementById("menu").onclick = function () {
         playmenu = false;
     }
 }
-
-cards.forEach(card => {
-    card.addEventListener("click", () => {
-        window.location.href = "detail.html";
-    });
-});
-
 

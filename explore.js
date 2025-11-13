@@ -1,8 +1,8 @@
 let cards = [];
 let playmenu = false;
-let url = `https://debuggers-games-api.duckdns.org/api/games`;
+let url = "https://debuggers-games-api.duckdns.org/api/games";
 let datas;
-let page = 1;
+let page;
 let gamelist = document.querySelector("#list");
 let chose;
 let loves = JSON.parse(window.localStorage.getItem("savelist")) || [];
@@ -38,10 +38,18 @@ function turnon() {
             }
         });
     });
+    document.querySelector("#next").addEventListener("click", () => {
+            window.localStorage.setItem("page", JSON.stringify(page));
+            document.querySelector("#wait").style.display = ("block");
+            document.querySelector("#next").style.display = ("none");
+            getdata();
+        });
 }
 
 function displaydata() {
-    for (let i = 0; i < 20; i++) {
+    document.querySelector("#wait").style.display = ("none");
+    document.querySelector("#next").style.display = ("block");
+    for (let i = 0; i < datas.results.length; i++) {
             gamelist.insertAdjacentHTML("beforeend", `
                 <div class="mb-5 md:mb-10 border border-title2 md:w-[45%] md:h-full lg:w-[32%] cursor-pointer hover:opacity-75 lg:hover:scale-105 lg:hover:opacity-100 cards">
                     <img id="#${datas.results[i].id}" class="w-[100%] h-[226px] lg:h-[227px] md:h-[181px] showinfo" src="${datas.results[i].background_image}">
@@ -137,6 +145,9 @@ async function getdata() {
     const res = await fetch(url);
     datas = await res.json();
     console.log(datas);
+    page = datas.next;
+    url = page;
+    console.log(page);
     displaydata();
   } catch (err) {
     console.error(err);

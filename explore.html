@@ -44,12 +44,22 @@
             <div class="w-1/1 flex items-center justify-between">
                 <h2 class="text-title2 ms-1 md:text-xl lg:text-2xl">Find any game by name and explore detailed information instantly</h2>
             </div>
-            <div class="w-1/1 m-6 flex items-center justify-between">
+            <div class="w-1/1 m-6 flex flex-col">
                 <img class="w-4 md:w-8 cursor-pointer" src="img/filter.png">
+                <div id="bigmenu" class="bg-black w-screen h-60 flex-col justify-center items-center border-t border-dashed border-title2">
+                    <h1 id="minihome" class="text-title1 cursor-pointer">HOME</h1>
+                    <h1 id="minisavelist" class="text-title2 cursor-pointer">SAVELIST</h1>
+                    <h1 id="miniabout" class="text-title2 cursor-pointer">ABOUT</h1>
+                    <h1 id="minisearch" class="text-title2 cursor-pointer">SEARCH</h1>
+                </div>
             </div>
             <div id="list" class="md:flex flex-wrap justify-around gap-5">
                 
             </div>
+        </div>
+        <div class="flex mb-6">
+            <button id="next" class="border border-dashed border-title2 w-36 h-8 md:w-40 md:h-10 lg:w-44 lg:h-12 text-sm lg:text-lg font-bold text-title2 text-stroke cursor-pointer hover:bg-title2 hidden">See more +20</button>
+            <img id="wait" src="img/load.gif">
         </div>
     </section>
     <footer class="w-screen bg-black flex flex-col justify-center items-center">

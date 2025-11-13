@@ -2,7 +2,7 @@ let cards = [];
 let playmenu = false;
 let url = `https://debuggers-games-api.duckdns.org/api/games`;
 let datas;
-let page = 1;
+let page = 'https://debuggers-games-api.duckdns.org/api/games';
 let gamelist = document.querySelector("#list");
 let chose;
 let loves = JSON.parse(window.localStorage.getItem("savelist")) || [];
@@ -153,6 +153,7 @@ document.getElementById("savelist").onclick = function () {
     window.location.href = "save.html";
 }
 document.getElementById("explore").onclick = function () {
+    window.localStorage.setItem("page", JSON.stringify(page));
     window.location.href = "explore.html";
 }
 document.getElementById("about").onclick = function () {

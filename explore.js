@@ -8,6 +8,7 @@ let chose;
 let loves = JSON.parse(window.localStorage.getItem("savelist")) || [];
 let idsearch = 0;
 let find = false;
+let playfilter = false;
 
 
 function turnon() {
@@ -39,11 +40,11 @@ function turnon() {
         });
     });
     document.querySelector("#next").addEventListener("click", () => {
-            window.localStorage.setItem("page", JSON.stringify(page));
-            document.querySelector("#wait").style.display = ("block");
-            document.querySelector("#next").style.display = ("none");
-            getdata();
-        });
+        window.localStorage.setItem("page", JSON.stringify(page));
+        document.querySelector("#wait").style.display = ("block");
+        document.querySelector("#next").style.display = ("none");
+        getdata();
+    });
 }
 
 function displaydata() {
@@ -138,6 +139,7 @@ function displaydata() {
     }
     cards = document.querySelectorAll(".showinfo");
     turnon();
+    filteron();
 }
 
 async function getdata() {
@@ -156,7 +158,25 @@ async function getdata() {
 
 getdata();
 
-
+document.getElementById("filterbtn").onclick = function () {
+    if ( playfilter == false) {
+        gsap.set("#filtermenu", { display: "flex", opacity: 0, });
+        gsap.to("#filtermenu", {
+            opacity: 1,
+            duration: 1,
+            height: "128px",
+        });
+        playfilter = true;
+    } else {
+        gsap.to("#filtermenu", {
+            opacity: 0,
+            duration: 1,
+            height: "0px",
+            onComplete: () => gsap.set("#filtermenu", { display: "none" })
+        });
+        playfilter = false;
+    }
+}
 
 document.getElementById("home").onclick = function () {
     window.location.href = "index.html";

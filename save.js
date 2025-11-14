@@ -8,6 +8,7 @@ let chose;
 let loves = JSON.parse(window.localStorage.getItem("savelist")) || [];
 let idsearch = 0;
 let find = false;
+let finding = 0;
 
 
 function turnon() {
@@ -41,7 +42,9 @@ function turnon() {
 }
 
 function displaydata() {
+    
     if (loves.length == 0) {
+        gamelist.innerHTML = "";
         gamelist.insertAdjacentHTML("beforeend", `
                 <div>
                     <img class="w-96 relative bottom-10" src="img/empty.gif">
@@ -52,6 +55,8 @@ function displaydata() {
             for (let check = 0; check < loves.length; check++) {
                 for (let i = 0; i < datas.results.length; i++) {
                 if (loves[check] == datas.results[i].id) {
+                    finding++;
+                    gamelist.innerHTML = "";
                     gamelist.insertAdjacentHTML("beforeend", `
                         <div class="mb-5 md:mb-10 border border-title2 md:w-[45%] lg:w-[32%] cursor-pointer hover:scale-105 cards">
                         <img id="#${datas.results[i].id}" class="w-[100%] h-[226px] lg:h-[227px] md:h-[181px] showinfo" src="${datas.results[i].background_image}">
@@ -138,7 +143,11 @@ function displaydata() {
                 }
             }
                 }
+                
                 }
+            }
+            if (finding != loves.length) {
+                getdata();
             }
         }
     cards = document.querySelectorAll(".showinfo");
@@ -150,6 +159,7 @@ async function getdata() {
     const res = await fetch(url);
     datas = await res.json();
     console.log(datas);
+    url = datas.next;
     displaydata();
   } catch (err) {
     console.error(err);

@@ -166,6 +166,11 @@ async function getdata() {
   }
 }
 
+gamelist.insertAdjacentHTML("beforeend", `
+    <div>
+        <img class="w-96 relative bottom-10 mt-10" src="img/load.gif">
+    </div>
+`);
 getdata();
 
 

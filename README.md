@@ -33,7 +33,7 @@ Build a modern video game catalogue with dynamic features such as:
 | Type | Tools |
 |------|-------|
 | Languages | HTML, CSS, JavaScript |
-| API | [RAWG.io](https://rawg.io/apidocs) |
+| API | [Badr Eddine Slaoui](https://github.com/Badr-Eddine-Slaoui) |
 | Version control | Git + GitHub |
 | Hosting | GitHub Pages |
 

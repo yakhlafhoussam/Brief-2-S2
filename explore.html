@@ -14,7 +14,7 @@
       }
     </style>
 </head>
-<body class="bg-[#131313] flex flex-col items-center font-pixel">
+<body class="bg-[#131313] flex flex-col items-center font-pixel overflow-x-hidden">
     <header>
         <div>
             <div class="w-screen h-16 lg:h-24 bg-black flex items-center justify-between px-4 lg:px-8">
@@ -44,13 +44,12 @@
             <div class="w-1/1 flex items-center justify-between">
                 <h2 class="text-title2 ms-1 md:text-xl lg:text-2xl">Find any game by name and explore detailed information instantly</h2>
             </div>
-            <div class="w-1/1 m-6 flex flex-col">
-                <img class="w-4 md:w-8 cursor-pointer" src="img/filter.png">
-                <div id="bigmenu" class="bg-black w-screen h-60 flex-col justify-center items-center border-t border-dashed border-title2">
-                    <h1 id="minihome" class="text-title1 cursor-pointer">HOME</h1>
-                    <h1 id="minisavelist" class="text-title2 cursor-pointer">SAVELIST</h1>
-                    <h1 id="miniabout" class="text-title2 cursor-pointer">ABOUT</h1>
-                    <h1 id="minisearch" class="text-title2 cursor-pointer">SEARCH</h1>
+            <div class="w-1/1 m-6 flex flex-col items-center">
+                <div class="w-full mb-4">
+                    <img id="filterbtn" class="w-4 md:w-8 cursor-pointer" src="img/filter.png">
+                </div>
+                <div id="filtermenu" class="hidden bg-black w-full flex flex-col justify-center items-center border border-dashed border-title2">
+                    <h1 class="text-title1 font-bold text-xl md:text-4xl lg:text-6xl">Coming soon</h1>
                 </div>
             </div>
             <div id="list" class="md:flex flex-wrap justify-around gap-5">

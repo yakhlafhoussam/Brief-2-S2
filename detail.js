@@ -7,8 +7,10 @@ let chose = JSON.parse(window.localStorage.getItem("chose"));
 let idsearch = 0;
 let loves = JSON.parse(window.localStorage.getItem("savelist")) || [];
 let find = false;
+let gamefind = false;
 
 function turnon() {
+    document.querySelector("#wait").style.display = "none";
     document.querySelectorAll(".save").forEach(saveone => {
         saveone.addEventListener("click", (event) => {
             idsearch = event.target.id;
@@ -209,22 +211,29 @@ function displaydata() {
                     document.getElementById(`${datas.results[i].id}`).setAttribute("src", "img/fillheart.png");
                 }
             }
+            gamefind = true;
+            turnon();
+            break;
         }
     }
-    turnon();
+    if (gamefind == false) {
+        getdata();
+    }
 }
 
 
 
 async function getdata() {
-  try {
+    if (gamefind == false) {
+        try {
     const res = await fetch(url);
     datas = await res.json();
-    console.log(datas);
+    url = datas.next;
     displaydata();
   } catch (err) {
     console.error(err);
   }
+    }
 }
 
 getdata();

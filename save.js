@@ -56,7 +56,7 @@ function displaydata() {
                 for (let i = 0; i < datas.results.length; i++) {
                 if (loves[check] == datas.results[i].id) {
                     finding++;
-                    gamelist.innerHTML = "";
+                    document.querySelector("#load").style.display = "none";
                     gamelist.insertAdjacentHTML("beforeend", `
                         <div class="mb-5 md:mb-10 border border-title2 md:w-[45%] lg:w-[32%] cursor-pointer hover:scale-105 cards">
                         <img id="#${datas.results[i].id}" class="w-[100%] h-[226px] lg:h-[227px] md:h-[181px] showinfo" src="${datas.results[i].background_image}">
@@ -168,7 +168,7 @@ async function getdata() {
 
 gamelist.insertAdjacentHTML("beforeend", `
     <div>
-        <img class="w-96 relative bottom-10 mt-10" src="img/load.gif">
+        <img id="load" class="w-96 relative bottom-10 mt-10" src="img/load.gif">
     </div>
 `);
 getdata();

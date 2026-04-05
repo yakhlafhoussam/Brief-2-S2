@@ -1,8 +1,8 @@
 let cards = [];
 let playmenu = false;
-let url = `https://simplonline-v3-prod.s3.eu-west-3.amazonaws.com/media/file/txt/filteredgames-690b33c424e7a033393285.txt`;
+let url = `https://api.rawg.io/api/platforms?key=8d05960348a144fea7f8913285b5c784`;
 let datas;
-let page = 'https://simplonline-v3-prod.s3.eu-west-3.amazonaws.com/media/file/txt/filteredgames-690b33c424e7a033393285.txt';
+let page = 'https://api.rawg.io/api/platforms?key=8d05960348a144fea7f8913285b5c784';
 let gamelist = document.querySelector("#list");
 let chose;
 let loves = JSON.parse(window.localStorage.getItem("savelist")) || [];

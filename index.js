@@ -1,6 +1,6 @@
 let cards = [];
 let playmenu = false;
-let url = `https://debuggers-games-api.duckdns.org/api/games`;
+let url = `https://simplonline-v3-prod.s3.eu-west-3.amazonaws.com/media/file/txt/filteredgames-690b33c424e7a033393285.txt`;
 let datas;
 let page = 'https://debuggers-games-api.duckdns.org/api/games';
 let gamelist = document.querySelector("#list");
